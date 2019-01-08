@@ -69,6 +69,11 @@ public class GameManager : MonoBehaviour
 	{
 		timerInSec += 60;
 		goalPerTimer += (int)(1.25f * goalPerTimer);
+		foreach ( Score s in scoreboards )
+		{
+			s.UpdateGoal(goalPerTimer);
+			s.UpdateTimer(timerInSec);
+		}
 	}
 
 
